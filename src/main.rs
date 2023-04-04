@@ -21,7 +21,6 @@ fn freq_to_pitch(freq: f32) -> String {
 }
 
 fn main() {
-
     let host = cpal::default_host();
     let device = host.default_input_device().expect("no input device available");
 
@@ -32,7 +31,6 @@ fn main() {
         .with_max_sample_rate();
 
     let sample_format = supported_config.sample_format();
-    // make sure this matches sample rate defined in const
     let sample_rate = supported_config.sample_rate();
 
     println!("Using input device: {}", device.name().unwrap());
