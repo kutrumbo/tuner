@@ -17,7 +17,7 @@ fn freq_to_pitch(freq: f32) -> String {
     let h = (12_f32 * (freq / C0).log2()).round();
     let octave = (h as i16) / 12;
     let n = (h as i16) % 12;
-    return NOTES[n as usize].to_string();
+    return format!("{}-{}", NOTES[n as usize], octave);
 }
 
 fn main() {
